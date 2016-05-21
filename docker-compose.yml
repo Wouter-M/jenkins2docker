@@ -6,7 +6,9 @@ services:
      - "8080:8080"
      - "50000:50000"
     links:
-    - node_ci
+     - node_ci
+    volumes:
+     - ~/docker-volume-mounts/jenkins/var/jenkins_home:/var/jenkins_home/
   node_ci:
    build: ./slave_node_alpine
    ports:
